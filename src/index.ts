@@ -1,4 +1,5 @@
 import { createTransport, Transporter } from 'nodemailer';
+import Mail from 'nodemailer/lib/mailer';
 import MandrillTransport from 'nodemailer-mandrill-transport';
 import {
   RawMailOptions,
@@ -13,6 +14,25 @@ type ArrayElement<ArrayType extends readonly unknown[]> =
 type Attachment = ArrayElement<
   Required<Parameters<Transporter['sendMail']>[0]>['attachments']
 >;
+
+type EmailInfo = TransactionalMailOptions['to'];
+
+type MandrillAttachment = {
+  type: string;
+  name: string;
+  content: string;
+};
+
+type MandrillOption = {
+  mandrillOptions: {
+    template_name: string;
+    template_content: [];
+    message: {
+      global_merge_vars: { name: string; content: unknown }[];
+      attachments?: MandrillAttachment[];
+    };
+  };
+};
 
 export interface SendimMandrillProviderConfig {
   apiKey: string;
@@ -65,17 +85,12 @@ export class SendimMandrillProvider implements SendimTransportInterface {
         };
       }) || [];
 
-    const sender = rawSender.email;
-    const to = rawTo.map((infos) => infos.email);
-    const cc = rawCc?.map((infos) => infos.email);
-    const bcc = rawBcc?.map((infos) => infos.email);
-
     const send = await this.smtpTransport.sendMail({
       ...options,
-      sender,
-      to,
-      cc,
-      bcc,
+      sender: rawSender.email,
+      to: this.parseMultipleEmail(rawTo),
+      cc: this.parseMultipleEmail(rawCc),
+      bcc: this.parseMultipleEmail(rawBcc),
       attachments,
     });
 
@@ -85,19 +100,57 @@ export class SendimMandrillProvider implements SendimTransportInterface {
   }
 
   async sendTransactionalMail({
-    attachments,
+    attachments: rawAttachments,
+    templateId,
+    sender,
+    to,
+    bcc,
+    cc,
+    reply,
     ...options
   }: TransactionalMailOptions) {
-    const templateId = parseInt(options?.templateId, 10);
+    const attachments: MandrillAttachment[] =
+      rawAttachments?.map((item) => {
+        const { content, contentType, name } = item;
+        return {
+          content,
+          name,
+          type: contentType,
+        };
+      }) || [];
 
-    const send = await this.smtpTransport.sendMail({
+    const mailOptions: Mail.Options & MandrillOption = {
       ...options,
-      templateId,
-      attachment: attachments,
-    });
+      from: sender.email,
+      to: this.parseMultipleEmail(to),
+      bcc: this.parseMultipleEmail(bcc),
+      cc: this.parseMultipleEmail(cc),
+      replyTo: reply?.email,
+      mandrillOptions: {
+        template_name: templateId,
+        template_content: [],
+        message: {
+          global_merge_vars: this.formatMandrillParam(options.params || {}),
+          attachments,
+        },
+      },
+    };
+    const send = await this.smtpTransport.sendMail(mailOptions);
 
     if (send?.body?.messageId) {
       throw new Error(send.response.statusMessage);
     }
   }
+
+  private parseMultipleEmail = (emailInfo?: EmailInfo) =>
+    emailInfo?.map((info) => info.email)?.join(',');
+
+  private formatMandrillParam = (object: Record<string, unknown>) => {
+    return Object.entries(object).map((e) => {
+      return {
+        name: e[0],
+        content: e[1],
+      };
+    });
+  };
 }
