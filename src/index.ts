@@ -1,41 +1,82 @@
+import { createTransport, Transporter } from 'nodemailer';
+import MandrillTransport from 'nodemailer-mandrill-transport';
 import {
   RawMailOptions,
   SendimTransportInterface,
   TransactionalMailOptions,
 } from 'sendim';
-import * as SendInBlue from 'sib-api-v3-typescript';
-import { AccountApiApiKeys } from 'sib-api-v3-typescript/api/accountApi';
-import { TransactionalEmailsApiApiKeys } from 'sib-api-v3-typescript/api/transactionalEmailsApi';
+
+// @see: https://stackoverflow.com/a/51399781
+type ArrayElement<ArrayType extends readonly unknown[]> =
+  ArrayType extends readonly (infer ElementType)[] ? ElementType : never;
+
+type Attachment = ArrayElement<
+  Required<Parameters<Transporter['sendMail']>[0]>['attachments']
+>;
 
 export interface SendimMandrillProviderConfig {
   apiKey: string;
 }
 export class SendimMandrillProvider implements SendimTransportInterface {
-  private accountApi: SendInBlue.AccountApi;
-  private smtpTransactionalApi: SendInBlue.TransactionalEmailsApi;
+  private smtpTransport: Transporter;
 
   providerName = 'Mandrill';
 
   constructor(public config: SendimMandrillProviderConfig) {
-    this.accountApi = new SendInBlue.AccountApi();
-    this.smtpTransactionalApi = new SendInBlue.TransactionalEmailsApi();
+    this.config = config;
 
-    this.accountApi.setApiKey(AccountApiApiKeys.apiKey, config.apiKey);
-    this.smtpTransactionalApi.setApiKey(
-      TransactionalEmailsApiApiKeys.apiKey,
-      config.apiKey,
+    this.smtpTransport = createTransport(
+      MandrillTransport({
+        auth: {
+          apiKey: config.apiKey,
+        },
+      }),
     );
   }
 
   async isHealthy() {
-    const account = await this.accountApi.getAccount();
-    return account?.response?.statusCode === 200;
+    try {
+      const response = await fetch(
+        'https://mandrillapp.com/api/1.0/users/ping',
+        { method: 'POST', headers: { key: this.config.apiKey } },
+      );
+      return response.status === 200;
+    } catch (e) {
+      throw new Error('Mandrill not healthy');
+    }
   }
 
-  async sendRawMail({ attachments, ...options }: RawMailOptions) {
-    const send = await this.smtpTransactionalApi.sendTransacEmail({
+  async sendRawMail({
+    attachments: rawAttachments,
+    sender: rawSender,
+    to: rawTo,
+    cc: rawCc,
+    bcc: rawBcc,
+    ...options
+  }: RawMailOptions) {
+    const attachments: Attachment[] =
+      rawAttachments?.map((item) => {
+        const { contentType, content, name } = item;
+
+        return {
+          contentType,
+          content,
+          filename: name,
+        };
+      }) || [];
+
+    const sender = rawSender.email;
+    const to = rawTo.map((infos) => infos.email);
+    const cc = rawCc?.map((infos) => infos.email);
+    const bcc = rawBcc?.map((infos) => infos.email);
+
+    const send = await this.smtpTransport.sendMail({
       ...options,
-      attachment: attachments,
+      sender,
+      to,
+      cc,
+      bcc,
+      attachments,
     });
 
     if (send?.body?.messageId) {
@@ -49,7 +90,7 @@ export class SendimMandrillProvider implements SendimTransportInterface {
   }: TransactionalMailOptions) {
     const templateId = parseInt(options?.templateId, 10);
 
-    const send = await this.smtpTransactionalApi.sendTransacEmail({
+    const send = await this.smtpTransport.sendMail({
       ...options,
       templateId,
       attachment: attachments,

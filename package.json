@@ -77,6 +77,9 @@
     "typescript": "4.9.5"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.7",
+    "nodemailer": "^6.9.1",
+    "nodemailer-mandrill-transport": "^1.2.0",
     "sendim": "^1.1.0",
     "sib-api-v3-typescript": "^2.2.2"
   }

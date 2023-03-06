@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@jest/globals': 29.4.3
   '@size-limit/preset-small-lib': 8.2.4
+  '@types/nodemailer': ^6.4.7
   '@typescript-eslint/eslint-plugin': 5.54.0
   '@typescript-eslint/parser': 5.54.0
   eslint: 8.35.0
@@ -12,6 +13,8 @@ specifiers:
   eslint-plugin-simple-import-sort: 10.0.0
   husky: 8.0.3
   jest: ^29.4.3
+  nodemailer: ^6.9.1
+  nodemailer-mandrill-transport: ^1.2.0
   np: 7.6.3
   prettier: 2.8.4
   sendim: ^1.1.0
@@ -23,6 +26,9 @@ specifiers:
   typescript: 4.9.5
 
 dependencies:
+  '@types/nodemailer': 6.4.7
+  nodemailer: 6.9.1
+  nodemailer-mandrill-transport: 1.2.0
   sendim: 1.1.0
   sib-api-v3-typescript: 2.2.2
 
@@ -2236,7 +2242,12 @@ packages:
 
   /@types/node/17.0.21:
     resolution: {integrity: sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==}
-    dev: true
+
+  /@types/nodemailer/6.4.7:
+    resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
+    dependencies:
+      '@types/node': 17.0.21
+    dev: false
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -2559,6 +2570,10 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
+
+  /addressparser/1.0.1:
+    resolution: {integrity: sha512-aQX7AISOMM7HFE0iZ3+YnD07oIeJqWGVnJ+ZIKaBZAk03ftmVYVqsGas/rbXKR21n4D/hKCSHypvcyOkds/xzg==}
+    dev: false
 
   /aggregate-error/3.1.0:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
@@ -7403,6 +7418,11 @@ packages:
       tmpl: 1.0.5
     dev: true
 
+  /mandrill-api/1.0.45:
+    resolution: {integrity: sha512-Hbr6z1AeReym0uVfGXNwyfGmyd7wZ81lsJg/iaogSDycI8J1lVjTx91u4pr4VSW3+fRqVASqre17ebHOr7yNKQ==}
+    deprecated: Deprecated. Replaced by @mailchimp/mailchimp_transactional
+    dev: false
+
   /map-age-cleaner/0.1.3:
     resolution: {integrity: sha512-bJzx6nMoP6PDLPBFmg7+xRKeFZvFboMrGlxmNj9ClvX53KrmvM5bXFXEWjbz4cz1AFn+jWJ9z/DJSz7hrs0w3w==}
     engines: {node: '>=6'}
@@ -7658,6 +7678,19 @@ packages:
   /node-releases/2.0.2:
     resolution: {integrity: sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==}
     dev: true
+
+  /nodemailer-mandrill-transport/1.2.0:
+    resolution: {integrity: sha512-Dli7B8D0Q2EkLi01ajSS4zaSfB1Vpv0s5539Dgjr6/XmQaXX7zVtzUvicWg38brgmFAaQ3HyXNFK6lWsF5I27A==}
+    dependencies:
+      addressparser: 1.0.1
+      extend: 3.0.2
+      mandrill-api: 1.0.45
+    dev: false
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
