@@ -80,7 +80,7 @@ describe('Sendim Mandrill', () => {
     expect(mockSendTransacEmail).toBeCalledWith({
       attachments: [],
       htmlContent: '<p>test</p>',
-      sender: 'test@test.fr',
+      from: 'test@test.fr',
       subject: 'test',
       textContent: 'test',
       to: 'test1@test.fr,test2@test.fr',
@@ -101,7 +101,10 @@ describe('Sendim Mandrill', () => {
       templateId: '6',
       to: [
         {
-          email: 'test@test.fr',
+          email: 'test1@test.fr',
+        },
+        {
+          email: 'test2@test.fr',
         },
       ],
       sender: {
@@ -110,15 +113,18 @@ describe('Sendim Mandrill', () => {
     });
 
     expect(mockSendTransacEmail).toBeCalledWith({
-      attachment: undefined,
-      templateId: '6',
-      to: [
-        {
-          email: 'test@test.fr',
+      from: 'test@test.fr',
+      to: 'test1@test.fr,test2@test.fr',
+      bcc: undefined,
+      cc: undefined,
+      replyTo: undefined,
+      mandrillOptions: {
+        template_name: '6',
+        template_content: [],
+        message: {
+          global_merge_vars: [],
+          attachments: [],
         },
-      ],
-      sender: {
-        email: 'test@test.fr',
       },
     });
   });

@@ -91,7 +91,7 @@ export class SendimMandrillProvider implements SendimTransportInterface {
 
     const send = await this.smtpTransport.sendMail({
       ...options,
-      sender: rawSender.email,
+      from: rawSender.email,
       to: this.parseMultipleEmail(rawTo),
       cc: this.parseMultipleEmail(rawCc),
       bcc: this.parseMultipleEmail(rawBcc),
@@ -139,6 +139,8 @@ export class SendimMandrillProvider implements SendimTransportInterface {
         },
       },
     };
+    delete mailOptions.attachments;
+
     const send = await this.smtpTransport.sendMail(mailOptions);
 
     if (send?.body?.messageId) {
