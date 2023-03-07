@@ -3,14 +3,17 @@ import { Sendim } from 'sendim';
 
 import { SendimMandrillProvider, SendimMandrillProviderConfig } from '../src';
 
-// const mockSendTransacEmail = jest.fn();
+const mockSendTransacEmail = jest.fn();
 
 jest.mock('axios', () => ({
   post: jest.fn().mockImplementation(() => ({
     status: process.env.FAILED === 'true' ? 400 : 200,
   })),
 }));
-// const mockedAxios = axios as jest.Mocked<typeof axios>;
+
+jest.mock('nodemailer');
+const nodemailer = require('nodemailer'); //doesn't work with import. idk why
+nodemailer.createTransport.mockReturnValue({ sendMail: mockSendTransacEmail });
 
 describe('Sendim Mandrill', () => {
   beforeEach(() => {
@@ -49,7 +52,7 @@ describe('Sendim Mandrill', () => {
     expect(Object.keys(sendim.transports)).toHaveLength(1);
   });
 
-  /*   it('should be able to send raw email', async () => {
+  it('should be able to send raw email', async () => {
     const sendim = new Sendim('debug');
 
     await sendim.addTransport<SendimMandrillProviderConfig>(
@@ -63,7 +66,10 @@ describe('Sendim Mandrill', () => {
       subject: 'test',
       to: [
         {
-          email: 'test@test.fr',
+          email: 'test1@test.fr',
+        },
+        {
+          email: 'test2@test.fr',
         },
       ],
       sender: {
@@ -72,18 +78,14 @@ describe('Sendim Mandrill', () => {
     });
 
     expect(mockSendTransacEmail).toBeCalledWith({
-      attachment: undefined,
+      attachments: [],
       htmlContent: '<p>test</p>',
-      sender: {
-        email: 'test@test.fr',
-      },
+      sender: 'test@test.fr',
       subject: 'test',
       textContent: 'test',
-      to: [
-        {
-          email: 'test@test.fr',
-        },
-      ],
+      to: 'test1@test.fr,test2@test.fr',
+      bcc: undefined,
+      cc: undefined,
     });
   });
 
@@ -119,5 +121,5 @@ describe('Sendim Mandrill', () => {
         email: 'test@test.fr',
       },
     });
-  }); */
+  });
 });
