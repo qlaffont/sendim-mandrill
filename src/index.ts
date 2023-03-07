@@ -56,12 +56,18 @@ export class SendimMandrillProvider implements SendimTransportInterface {
   }
 
   async isHealthy() {
-    const response = await axios('https://mandrillapp.com/api/1.0/users/ping', {
-      method: 'POST',
-      headers: { key: this.config.apiKey },
-    });
+    try {
+      const response = await axios.post(
+        'https://mandrillapp.com/api/1.0/users/ping',
+        {
+          headers: { key: this.config.apiKey },
+        },
+      );
 
-    return response.status === 200;
+      return response.status === 200;
+    } catch (e) {
+      return false;
+    }
   }
 
   async sendRawMail({
