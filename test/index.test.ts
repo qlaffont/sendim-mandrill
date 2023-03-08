@@ -110,6 +110,9 @@ describe('Sendim Mandrill', () => {
       sender: {
         email: 'test@test.fr',
       },
+      params: {
+        TEST: 'testParam',
+      },
     });
 
     expect(mockSendTransacEmail).toBeCalledWith({
@@ -122,7 +125,12 @@ describe('Sendim Mandrill', () => {
         template_name: '6',
         template_content: [],
         message: {
-          global_merge_vars: [],
+          global_merge_vars: [
+            {
+              name: 'TEST',
+              content: 'testParam',
+            },
+          ],
           attachments: [],
         },
       },

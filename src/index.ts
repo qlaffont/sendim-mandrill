@@ -92,16 +92,19 @@ export class SendimMandrillProvider implements SendimTransportInterface {
     }
   }
 
-  async sendTransactionalMail({
-    attachments: rawAttachments,
-    templateId,
-    sender,
-    to,
-    bcc,
-    cc,
-    reply,
-    ...options
-  }: TransactionalMailOptions) {
+  async sendTransactionalMail(transacMailOptions: TransactionalMailOptions) {
+    const {
+      attachments: rawAttachments,
+      templateId,
+      sender,
+      to,
+      bcc,
+      cc,
+      reply,
+      params,
+      ...options
+    } = transacMailOptions;
+
     const attachments: MandrillAttachment[] =
       rawAttachments?.map((item) => ({
         content: item.content,
@@ -120,7 +123,7 @@ export class SendimMandrillProvider implements SendimTransportInterface {
         template_name: templateId,
         template_content: [],
         message: {
-          global_merge_vars: this.formatMandrillParam(options.params || {}),
+          global_merge_vars: this.formatMandrillParam(params || {}),
           attachments,
         },
       },
@@ -137,12 +140,9 @@ export class SendimMandrillProvider implements SendimTransportInterface {
   private parseMultipleEmail = (emailInfo?: EmailInfo) =>
     emailInfo?.map((info) => info.email)?.join(',');
 
-  private formatMandrillParam = (object: Record<string, unknown>) => {
-    return Object.entries(object).map((e) => {
-      return {
-        name: e[0],
-        content: e[1],
-      };
-    });
-  };
+  private formatMandrillParam = (object: Record<string, unknown>) =>
+    Object.entries(object).map((e) => ({
+      name: e[0],
+      content: e[1],
+    }));
 }
