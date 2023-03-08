@@ -5,11 +5,11 @@ import { SendimMandrillProvider, SendimMandrillProviderConfig } from '../src';
 
 const mockSendTransacEmail = jest.fn();
 
-jest.mock('axios', () => ({
-  post: jest.fn().mockImplementation(() => ({
+jest.mock('node-fetch', () =>
+  jest.fn().mockImplementation(() => ({
     status: process.env.FAILED === 'true' ? 400 : 200,
   })),
-}));
+);
 
 jest.mock('nodemailer');
 const nodemailer = require('nodemailer'); //doesn't work with import. idk why

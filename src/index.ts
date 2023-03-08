@@ -1,4 +1,4 @@
-import axios from 'axios';
+import fetch from 'node-fetch';
 import { createTransport, Transporter } from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import MandrillTransport from 'nodemailer-mandrill-transport';
@@ -56,18 +56,11 @@ export class SendimMandrillProvider implements SendimTransportInterface {
   }
 
   async isHealthy() {
-    try {
-      const response = await axios.post(
-        'https://mandrillapp.com/api/1.0/users/ping',
-        {
-          headers: { key: this.config.apiKey },
-        },
-      );
+    const response = await fetch('https://mandrillapp.com/api/1.0/users/ping', {
+      headers: { key: this.config.apiKey },
+    });
 
-      return response.status === 200;
-    } catch (e) {
-      return false;
-    }
+    return response.status === 200;
   }
 
   async sendRawMail({
