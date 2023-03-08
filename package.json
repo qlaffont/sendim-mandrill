@@ -80,7 +80,7 @@
   "dependencies": {
     "@types/node-fetch": "^2.6.2",
     "@types/nodemailer": "^6.4.7",
-    "node-fetch": "2",
+    "node-fetch": "3",
     "nodemailer": "^6.9.1",
     "nodemailer-mandrill-transport": "^1.2.0",
     "sendim": "^1.1.0",
