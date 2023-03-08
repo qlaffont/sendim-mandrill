@@ -57,7 +57,8 @@ export class SendimMandrillProvider implements SendimTransportInterface {
 
   async isHealthy() {
     const response = await fetch('https://mandrillapp.com/api/1.0/users/ping', {
-      headers: { key: this.config.apiKey },
+      method: 'POST',
+      body: JSON.stringify({ key: this.config.apiKey }),
     });
 
     return response.status === 200;
