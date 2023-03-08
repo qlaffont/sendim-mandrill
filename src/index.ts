@@ -72,15 +72,11 @@ export class SendimMandrillProvider implements SendimTransportInterface {
     ...options
   }: RawMailOptions) {
     const attachments: Attachment[] =
-      rawAttachments?.map((item) => {
-        const { contentType, content, name } = item;
-
-        return {
-          contentType,
-          content,
-          filename: name,
-        };
-      }) || [];
+      rawAttachments?.map((item) => ({
+        contentType: item.contentType,
+        content: item.content,
+        filename: item.name,
+      })) || [];
 
     const send = await this.smtpTransport.sendMail({
       ...options,
@@ -107,14 +103,11 @@ export class SendimMandrillProvider implements SendimTransportInterface {
     ...options
   }: TransactionalMailOptions) {
     const attachments: MandrillAttachment[] =
-      rawAttachments?.map((item) => {
-        const { content, contentType, name } = item;
-        return {
-          content,
-          name,
-          type: contentType,
-        };
-      }) || [];
+      rawAttachments?.map((item) => ({
+        content: item.content,
+        name: item.name,
+        type: item.contentType,
+      })) || [];
 
     const mailOptions: Mail.Options & MandrillOption = {
       ...options,
