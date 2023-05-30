@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^29.4.3
     version: 29.4.3
   np:
-    specifier: 8.0.1
-    version: 8.0.1
+    specifier: 8.0.2
+    version: 8.0.2
   prettier:
     specifier: 2.8.8
     version: 2.8.8
@@ -8188,8 +8188,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /np@8.0.1:
-    resolution: {integrity: sha512-5Vd3p5LlymIUhQjKIVhcf/Zh1/Mpeuo4agQ53LWXokPnGlWH3SAjZx5jmy56B904uwnKXyM/220GJae5p7/NhA==}
+  /np@8.0.2:
+    resolution: {integrity: sha512-mkQB4rEx736mbOd8gq4DfTW/Oh11CplO44AalimMehT7EKJB1vht50DdzpsXL78qPbzjPnnP7JddS179dbsAJg==}
     engines: {git: '>=2.11.0', node: '>=16.6.0', npm: '>=7.19.0', yarn: '>=1.7.0'}
     hasBin: true
     dependencies:
