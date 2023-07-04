@@ -58,7 +58,7 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@jest/globals": "29.5.0",
+    "@jest/globals": "29.6.0",
     "@size-limit/preset-small-lib": "8.2.6",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
