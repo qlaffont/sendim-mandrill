@@ -30,15 +30,15 @@
     "access": "public"
   },
   "name": "sendim-mandrill",
-  "author": "flexper",
+  "author": "qlaffont",
   "module": "dist/sendim-mandrill.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flexper/sendim-mandrill.git"
+    "url": "https://github.com/qlaffont/sendim-mandrill.git"
   },
   "bugs": {
-    "url": "https://github.com/flexper/sendim-mandrill/issues",
-    "email": "contact@flexper.fr"
+    "url": "https://github.com/qlaffont/sendim-mandrill/issues",
+    "email": "contact@qlaffont.com"
   },
   "size-limit": [
     {
