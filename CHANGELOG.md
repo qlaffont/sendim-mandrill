@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.19 (2024-02-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node-fetch to v2.6.11 ([21783da](https://github.com/qlaffont/sendim-mandrill/commit/21783da0afcf428225686bcd00d10c908cf7f175))
+
 ### 1.0.18 (2024-02-24)
 
 ### 1.0.17 (2024-02-21)
