@@ -16,7 +16,7 @@ dependencies:
     version: 3.3.2
   nodemailer:
     specifier: ^6.9.1
-    version: 6.9.11
+    version: 6.9.12
   nodemailer-mandrill-transport:
     specifier: ^1.2.0
     version: 1.2.0
@@ -8396,8 +8396,8 @@ packages:
       mandrill-api: 1.0.45
     dev: false
 
-  /nodemailer@6.9.11:
-    resolution: {integrity: sha512-UiAkgiERuG94kl/3bKfE8o10epvDnl0vokNEtZDPTq9BWzIl6EFT9336SbIT4oaTBD8NmmUTLsQyXHV82eXSWg==}
+  /nodemailer@6.9.12:
+    resolution: {integrity: sha512-pnLo7g37Br3jXbF0bl5DekBJihm2q+3bB3l2o/B060sWmb5l+VqeScAQCBqaQ+5ezRZFzW5SciZNGdRDEbq89w==}
     engines: {node: '>=6.0.0'}
     dev: false
 
