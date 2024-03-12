@@ -22,7 +22,7 @@ dependencies:
     version: 1.2.0
   sendim:
     specifier: ^1.2.0
-    version: 1.2.85
+    version: 1.2.87
   sib-api-v3-typescript:
     specifier: ^2.2.2
     version: 2.2.2
@@ -5442,8 +5442,8 @@ packages:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
     dev: true
 
-  /fast-redact@3.3.0:
-    resolution: {integrity: sha512-6T5V1QK1u4oF+ATxs1lWUmlEk6P2T9HqJG3e2DnHOdVgZy2rFJBoEnrIedcTXlkAHU/zKC+7KETJ+KGGKwxgMQ==}
+  /fast-redact@3.4.0:
+    resolution: {integrity: sha512-2gwPvyna0zwBdxKnng1suu/dTL5s8XEy2ZqH8mwDUwJdDkV8w5kp+JV26mupdK68HmPMbm6yjW9m7/Ys/BHEHg==}
     engines: {node: '>=6'}
     dev: false
 
@@ -8971,7 +8971,7 @@ packages:
     hasBin: true
     dependencies:
       atomic-sleep: 1.0.0
-      fast-redact: 3.3.0
+      fast-redact: 3.4.0
       on-exit-leak-free: 2.1.2
       pino-abstract-transport: 1.1.0
       pino-std-serializers: 6.2.2
@@ -9766,8 +9766,8 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /sendim@1.2.85:
-    resolution: {integrity: sha512-jQB5l6t4GvV/yCWl7Tq8blJf2eSlRGryv2jJ8sGvqo86h8F4ehCHfOYcH0m0IgKmFefwgW0ao1+rxc9HrlMXbg==}
+  /sendim@1.2.87:
+    resolution: {integrity: sha512-85S4p0mkPN2kqoE3HFjJ44rDsMH8VJ2g5v+GC5SRXvSdt8/EW43tlGUW2VNyUgwZu72Lww9WBt0GWAy3sqimqQ==}
     engines: {node: '>=10'}
     dependencies:
       pino: 8.19.0
