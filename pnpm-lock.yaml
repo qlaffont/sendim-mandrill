@@ -22,7 +22,7 @@ dependencies:
     version: 1.2.0
   sendim:
     specifier: ^1.2.0
-    version: 1.2.89
+    version: 1.2.91
   sib-api-v3-typescript:
     specifier: ^2.2.2
     version: 2.2.2
@@ -9706,8 +9706,8 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /sendim@1.2.89:
-    resolution: {integrity: sha512-CNjLxBwS5ncgfJbk8j8L9Fku3dCjLKTrIkSYxDTxibV7h04aBpjDcMAySmeBs+pl/FWjEadGM20cr7jSVbjVDw==}
+  /sendim@1.2.91:
+    resolution: {integrity: sha512-aMYGFWhbUbpmpqcmgvRRnQV/KjRMDWPMbnCEzKh/n0ZLEuKCbiDL4YCIutpLVeBF+pSs+RR+hxOm3694a039oQ==}
     engines: {node: '>=10'}
     dependencies:
       pino: 8.19.0
