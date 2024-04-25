@@ -25,7 +25,7 @@ importers:
         version: 1.2.0
       sendim:
         specifier: ^1.2.0
-        version: 1.2.111
+        version: 1.2.112
       sib-api-v3-typescript:
         specifier: ^2.2.2
         version: 2.2.2
@@ -4332,8 +4332,8 @@ packages:
   pino-std-serializers@6.2.2:
     resolution: {integrity: sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==}
 
-  pino@8.21.0:
-    resolution: {integrity: sha512-ip4qdzjkAyDDZklUaZkcRFb2iA118H9SgRh8yzTkSQK8HilsOJF7rSY8HoW5+I0M46AZgX/pxbprf2vvzQCE0Q==}
+  pino@9.0.0:
+    resolution: {integrity: sha512-uI1ThkzTShNSwvsUM6b4ND8ANzWURk9zTELMztFkmnCQeR/4wkomJ+echHee5GMWGovoSfjwdeu80DsFIt7mbA==}
     hasBin: true
 
   pirates@4.0.5:
@@ -4783,8 +4783,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sendim@1.2.111:
-    resolution: {integrity: sha512-SWQSm+NgE0mqUKI+tThzS5k0MPdVG5DQrjJXBeJ9mr+iG52UD9zdwgPDPWwnIfwR0oEWX8LD7emwQr2EIM+q0Q==}
+  sendim@1.2.112:
+    resolution: {integrity: sha512-F3nXp6MWWEUXYOcCBwS2I0lLnokRo8I+DB6WtGjEOQi1t2lPwZcEJNb2cSsXvUYiS4PYcJO1wOOegn+c71syoA==}
     engines: {node: '>=10'}
 
   serialize-javascript@4.0.0:
@@ -11177,7 +11177,7 @@ snapshots:
 
   pino-std-serializers@6.2.2: {}
 
-  pino@8.21.0:
+  pino@9.0.0:
     dependencies:
       atomic-sleep: 1.0.0
       fast-redact: 3.5.0
@@ -11650,9 +11650,9 @@ snapshots:
     dependencies:
       lru-cache: 6.0.0
 
-  sendim@1.2.111:
+  sendim@1.2.112:
     dependencies:
-      pino: 8.21.0
+      pino: 9.0.0
 
   serialize-javascript@4.0.0:
     dependencies:
