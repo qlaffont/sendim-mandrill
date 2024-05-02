@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.87 (2024-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/nodemailer to v6.4.15 ([086f0a3](https://github.com/qlaffont/sendim-mandrill/commit/086f0a39c6c4fb84a7501824a24612a7bf9acee3))
+
 ### 1.0.86 (2024-04-30)
 
 
