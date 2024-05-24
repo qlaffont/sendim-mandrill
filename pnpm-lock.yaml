@@ -25,7 +25,7 @@ importers:
         version: 1.2.0
       sendim:
         specifier: ^1.2.0
-        version: 1.2.120
+        version: 1.2.121
       sib-api-v3-typescript:
         specifier: ^2.2.2
         version: 2.2.2
@@ -3018,6 +3018,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -4794,8 +4795,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sendim@1.2.120:
-    resolution: {integrity: sha512-77JL28svwaLxXMEEIdZicxZ4M1C6Qv62toogSuSIklAzODCLWDFc8fBBzrof9SjQVxo+loZ22IIuA24S4nIbvg==}
+  sendim@1.2.121:
+    resolution: {integrity: sha512-g9FyhsoyRVQZ9Kc7RWlWLEJXox8jbyPAMJJ7uTH2PWg9bA/7Nb88IxogMzlys2hZJGiK68tAu5mJbP5JDS4wig==}
     engines: {node: '>=10'}
 
   serialize-javascript@4.0.0:
@@ -5155,8 +5156,8 @@ packages:
   text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  thread-stream@3.0.0:
-    resolution: {integrity: sha512-oUIFjxaUT6knhPtWgDMc29zF1FcSl0yXpapkyrQrCGEfYA2HUZXCilUtKyYIv6HkCyqSPAMkY+EG0GbyIrNDQg==}
+  thread-stream@3.0.1:
+    resolution: {integrity: sha512-O5O/RbdV3CjhtwFa4slXvrb/26lzsf4/NMts3QFIRniIsi+584QSneJXaHXasqcZO+B7pWZkr+4h9knhnAQevg==}
 
   throat@5.0.0:
     resolution: {integrity: sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==}
@@ -11196,7 +11197,7 @@ snapshots:
       real-require: 0.2.0
       safe-stable-stringify: 2.4.3
       sonic-boom: 4.0.1
-      thread-stream: 3.0.0
+      thread-stream: 3.0.1
 
   pirates@4.0.5: {}
 
@@ -11659,7 +11660,7 @@ snapshots:
 
   semver@7.6.2: {}
 
-  sendim@1.2.120:
+  sendim@1.2.121:
     dependencies:
       pino: 9.1.0
 
@@ -12067,7 +12068,7 @@ snapshots:
 
   text-table@0.2.0: {}
 
-  thread-stream@3.0.0:
+  thread-stream@3.0.1:
     dependencies:
       real-require: 0.2.0
 
