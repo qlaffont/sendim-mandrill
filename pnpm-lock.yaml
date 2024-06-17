@@ -25,7 +25,7 @@ importers:
         version: 1.2.0
       sendim:
         specifier: ^1.2.0
-        version: 1.2.130
+        version: 1.2.131
       sib-api-v3-typescript:
         specifier: ^2.2.2
         version: 2.2.2
@@ -4800,8 +4800,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sendim@1.2.130:
-    resolution: {integrity: sha512-tC4yR1o7Wp8UZGKg6mn+d6B7QWateawhzxXImcwMZ/pVQGeuh08LTv5GHiLCUeusq7B/2yPY9VWj1+iflkdPGw==}
+  sendim@1.2.131:
+    resolution: {integrity: sha512-bb+KaQXZASThyBzH14/yguPcCUCsVKJJvK3c1noRv7AwwsBuVpTIkszBIDvU/rKXGD70c3nkTnWghRrRYMwzEg==}
     engines: {node: '>=10'}
 
   serialize-javascript@4.0.0:
@@ -5161,8 +5161,8 @@ packages:
   text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  thread-stream@3.0.2:
-    resolution: {integrity: sha512-cBL4xF2A3lSINV4rD5tyqnKH4z/TgWPvT+NaVhJDSwK962oo/Ye7cHSMbDzwcu7tAE1SfU6Q4XtV6Hucmi6Hlw==}
+  thread-stream@3.1.0:
+    resolution: {integrity: sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==}
 
   throat@5.0.0:
     resolution: {integrity: sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==}
@@ -11202,7 +11202,7 @@ snapshots:
       real-require: 0.2.0
       safe-stable-stringify: 2.4.3
       sonic-boom: 4.0.1
-      thread-stream: 3.0.2
+      thread-stream: 3.1.0
 
   pirates@4.0.5: {}
 
@@ -11665,7 +11665,7 @@ snapshots:
 
   semver@7.6.2: {}
 
-  sendim@1.2.130:
+  sendim@1.2.131:
     dependencies:
       pino: 9.2.0
 
@@ -12073,7 +12073,7 @@ snapshots:
 
   text-table@0.2.0: {}
 
-  thread-stream@3.0.2:
+  thread-stream@3.1.0:
     dependencies:
       real-require: 0.2.0
 
