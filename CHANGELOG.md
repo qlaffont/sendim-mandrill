@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.224 (2024-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node-fetch to v2.6.12 ([#347](https://github.com/qlaffont/sendim-mandrill/issues/347)) ([dcf5d7b](https://github.com/qlaffont/sendim-mandrill/commit/dcf5d7bf4dfd32b9d7c272cdd9b0e3763aacf65b))
+
 ### 1.0.223 (2024-11-11)
 
 ### 1.0.222 (2024-11-05)
