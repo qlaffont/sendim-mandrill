@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.232 (2024-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/nodemailer to v6.4.17 ([#356](https://github.com/qlaffont/sendim-mandrill/issues/356)) ([acbfba2](https://github.com/qlaffont/sendim-mandrill/commit/acbfba2e842453e7b4e994c8b9fdd4a0fd32f3cc))
+
 ### 1.0.231 (2024-11-19)
 
 ### 1.0.230 (2024-11-18)
