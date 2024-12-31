@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.261 (2024-12-31)
+
+
+### Bug Fixes
+
+* **deps:** update dependency sendim to v1.2.218 ([#385](https://github.com/qlaffont/sendim-mandrill/issues/385)) ([2f478fe](https://github.com/qlaffont/sendim-mandrill/commit/2f478fee8bda107763d0c0de6223f82db3141e77))
+
 ### 1.0.260 (2024-12-30)
 
 ### 1.0.259 (2024-12-29)
