@@ -25,7 +25,7 @@ importers:
         version: 1.2.0
       sendim:
         specifier: ^1.2.0
-        version: 1.2.218
+        version: 1.2.220
       sib-api-v3-typescript:
         specifier: ^2.2.2
         version: 2.2.2
@@ -4269,8 +4269,8 @@ packages:
     resolution: {integrity: sha512-VvivMrbvd2nKkiG38qjULzlc+4Vx4wm/whI9pQD35YrARNnhxeiRktSOhSukRLFNlzg6Br/cJPet5J/u19r/mg==}
     engines: {node: '>= 0.6'}
 
-  process-warning@4.0.0:
-    resolution: {integrity: sha512-/MyYDxttz7DfGMMHiysAsFE4qF+pQYAA8ziO/3NcRVrQ5fSk+Mns4QZA/oRPFzvcqNoVJXQNWNAsdwBXLUkQKw==}
+  process-warning@4.0.1:
+    resolution: {integrity: sha512-3c2LzQ3rY9d0hc1emcsHhfT9Jwz0cChib/QN89oME2R451w5fy3f0afAhERFZAwrbDU43wk12d0ORBpDVME50Q==}
 
   progress-estimator@0.2.2:
     resolution: {integrity: sha512-GF76Ac02MTJD6o2nMNtmtOFjwWCnHcvXyn5HOWPQnEMO8OTLw7LAvNmrwe8LmdsB+eZhwUu9fX/c9iQnBxWaFA==}
@@ -4639,8 +4639,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sendim@1.2.218:
-    resolution: {integrity: sha512-DzUzi9AcKIb8NLOSbW6zG1aVrd8/t5Hvf0lazSEvZpLmMx7uK2lH82QHftguu6HcX6ReQY4wPUSxaL+wNeKv+g==}
+  sendim@1.2.220:
+    resolution: {integrity: sha512-32/1RoTYSJ/7uufHCoP0dbwfKm2iIhHdY+m0ZjS/L4fSw90cp2iMC3ZVot2DlTgPSqU/f4/19ujhj0mkSFXlMQ==}
     engines: {node: '>=10'}
 
   serialize-javascript@4.0.0:
@@ -10848,7 +10848,7 @@ snapshots:
       on-exit-leak-free: 2.1.2
       pino-abstract-transport: 2.0.0
       pino-std-serializers: 7.0.0
-      process-warning: 4.0.0
+      process-warning: 4.0.1
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0
       safe-stable-stringify: 2.5.0
@@ -10898,7 +10898,7 @@ snapshots:
 
   private@0.1.8: {}
 
-  process-warning@4.0.0: {}
+  process-warning@4.0.1: {}
 
   progress-estimator@0.2.2:
     dependencies:
@@ -11284,7 +11284,7 @@ snapshots:
 
   semver@7.6.3: {}
 
-  sendim@1.2.218:
+  sendim@1.2.220:
     dependencies:
       pino: 9.6.0
 
