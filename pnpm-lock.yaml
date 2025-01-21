@@ -25,7 +25,7 @@ importers:
         version: 1.2.0
       sendim:
         specifier: ^1.2.0
-        version: 1.2.226
+        version: 1.2.227
       sib-api-v3-typescript:
         specifier: ^2.2.2
         version: 2.2.2
@@ -4639,8 +4639,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  sendim@1.2.226:
-    resolution: {integrity: sha512-3ul9q3UYXhcyyaLDV3dn3701a06QfrrSXB9BW+u9YGfmvlFY7J/SQeNALi/LP383gl9p0j27gOI++doJONNg6g==}
+  sendim@1.2.227:
+    resolution: {integrity: sha512-kxfjDnLyoZJA8n4B5iKFxltlf09Bgtb1vJjJK9sIutVXqKvcu3KOL4TxakfZShxUjU/4xMcRp1lDf1vkIY7HoQ==}
     engines: {node: '>=10'}
 
   serialize-javascript@4.0.0:
@@ -8260,7 +8260,7 @@ snapshots:
       eslint: 6.8.0
       get-stdin: 6.0.0
 
-  eslint-config-react-app@5.2.1(@typescript-eslint/eslint-plugin@2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)(typescript@3.9.10))(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(babel-eslint@10.1.0(eslint@8.57.1))(eslint-plugin-flowtype@3.13.0(eslint@6.8.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1))(eslint-plugin-jsx-a11y@6.5.1(eslint@6.8.0))(eslint-plugin-react-hooks@2.5.1(eslint@6.8.0))(eslint-plugin-react@7.28.0(eslint@6.8.0))(eslint@6.8.0)(typescript@3.9.10):
+  eslint-config-react-app@5.2.1(@typescript-eslint/eslint-plugin@2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)(typescript@3.9.10))(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(babel-eslint@10.1.0(eslint@6.8.0))(eslint-plugin-flowtype@3.13.0(eslint@6.8.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1))(eslint-plugin-jsx-a11y@6.5.1(eslint@6.8.0))(eslint-plugin-react-hooks@2.5.1(eslint@6.8.0))(eslint-plugin-react@7.28.0(eslint@6.8.0))(eslint@6.8.0)(typescript@3.9.10):
     dependencies:
       '@typescript-eslint/eslint-plugin': 2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)(typescript@3.9.10)
       '@typescript-eslint/parser': 2.34.0(eslint@6.8.0)(typescript@3.9.10)
@@ -11284,7 +11284,7 @@ snapshots:
 
   semver@7.6.3: {}
 
-  sendim@1.2.226:
+  sendim@1.2.227:
     dependencies:
       pino: 9.6.0
 
@@ -11814,7 +11814,7 @@ snapshots:
       enquirer: 2.3.6
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0(eslint@6.8.0)
-      eslint-config-react-app: 5.2.1(@typescript-eslint/eslint-plugin@2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)(typescript@3.9.10))(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(babel-eslint@10.1.0(eslint@8.57.1))(eslint-plugin-flowtype@3.13.0(eslint@6.8.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1))(eslint-plugin-jsx-a11y@6.5.1(eslint@6.8.0))(eslint-plugin-react-hooks@2.5.1(eslint@6.8.0))(eslint-plugin-react@7.28.0(eslint@6.8.0))(eslint@6.8.0)(typescript@3.9.10)
+      eslint-config-react-app: 5.2.1(@typescript-eslint/eslint-plugin@2.34.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)(typescript@3.9.10))(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(babel-eslint@10.1.0(eslint@6.8.0))(eslint-plugin-flowtype@3.13.0(eslint@6.8.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.21.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1))(eslint-plugin-jsx-a11y@6.5.1(eslint@6.8.0))(eslint-plugin-react-hooks@2.5.1(eslint@6.8.0))(eslint-plugin-react@7.28.0(eslint@6.8.0))(eslint@6.8.0)(typescript@3.9.10)
       eslint-plugin-flowtype: 3.13.0(eslint@6.8.0)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@2.34.0(eslint@6.8.0)(typescript@3.9.10))(eslint@6.8.0)
       eslint-plugin-jsx-a11y: 6.5.1(eslint@6.8.0)
