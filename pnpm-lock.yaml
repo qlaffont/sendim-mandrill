@@ -19,7 +19,7 @@ importers:
         version: 3.3.2
       nodemailer:
         specifier: ^6.9.1
-        version: 6.9.16
+        version: 6.10.0
       nodemailer-mandrill-transport:
         specifier: ^1.2.0
         version: 1.2.0
@@ -3924,8 +3924,8 @@ packages:
   nodemailer-mandrill-transport@1.2.0:
     resolution: {integrity: sha512-Dli7B8D0Q2EkLi01ajSS4zaSfB1Vpv0s5539Dgjr6/XmQaXX7zVtzUvicWg38brgmFAaQ3HyXNFK6lWsF5I27A==}
 
-  nodemailer@6.9.16:
-    resolution: {integrity: sha512-psAuZdTIRN08HKVd/E8ObdV6NO7NTBY3KsC30F7M4H1OnmLCUNaS56FpYxyb26zWLSyYF9Ozch9KYHhHegsiOQ==}
+  nodemailer@6.10.0:
+    resolution: {integrity: sha512-SQ3wZCExjeSatLE/HBaXS5vqUOQk6GtBdIIKxiFdmm01mOQZX/POJkO3SUX1wDiYcwUOJwT23scFSC9fY2H8IA==}
     engines: {node: '>=6.0.0'}
 
   normalize-package-data@2.5.0:
@@ -10511,7 +10511,7 @@ snapshots:
       extend: 3.0.2
       mandrill-api: 1.0.45
 
-  nodemailer@6.9.16: {}
+  nodemailer@6.10.0: {}
 
   normalize-package-data@2.5.0:
     dependencies:
