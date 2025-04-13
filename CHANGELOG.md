@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.333 (2025-04-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nodemailer to v6.10.1 ([#463](https://github.com/qlaffont/sendim-mandrill/issues/463)) ([8062824](https://github.com/qlaffont/sendim-mandrill/commit/806282411c33cd15bb0b3aaeb6d537f73a63c983))
+
 ### 1.0.332 (2025-04-11)
 
 
