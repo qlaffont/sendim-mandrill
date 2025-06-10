@@ -58,7 +58,7 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@jest/globals": "29.7.0",
+    "@jest/globals": "30.0.0",
     "@size-limit/preset-small-lib": "11.2.0",
     "@typescript-eslint/eslint-plugin": "8.34.0",
     "@typescript-eslint/parser": "8.34.0",
@@ -68,7 +68,7 @@
     "eslint-plugin-prettier": "5.4.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "husky": "9.1.7",
-    "jest": "^29.4.3",
+    "jest": "^30.0.0",
     "np": "10.2.0",
     "prettier": "3.5.3",
     "size-limit": "11.2.0",
